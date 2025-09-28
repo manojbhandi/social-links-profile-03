@@ -1,0 +1,183 @@
+/* imports and fonts */
+
+/* Variable Fonts */
+@font-face {
+    font-family: 'Inter';
+    src: url('./assets/fonts/Inter-VariableFont_slnt,wght.ttf') format('truetype');
+    font-weight: 100 900;
+    font-style: normal;
+    font-display: swap;
+}
+
+/* static fonts */
+@font-face {
+    font-family: 'Inter';
+    src: url('./assets/fonts/static/Inter-Regular.ttf') format('truetype');
+    font-weight: 400;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'Inter';
+    src: url('./assets/fonts/static/Inter-SemiBold.ttf') format('truetype');
+    font-weight: 600;
+    font-style: normal;
+    font-display: swap;
+}
+@font-face {
+    font-family: 'Inter';
+    src: url('./assets/fonts/static/Inter-Bold.ttf') format('truetype');
+    font-weight: 700;
+    font-style: normal;
+    font-display: swap;
+}
+
+
+/* CSS Reset */
+
+*,
+*::before,
+*::after {
+    box-sizing: border-box;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    /*line-height: 1.5;*/
+    -webkit-font-smoothing: antialiased;
+}
+
+img,
+video,
+picture {
+    display: block;
+    max-width: 100%;
+}
+
+input,
+button,
+select,
+textarea {
+    font: inherit;
+}
+
+p,
+h1, h2, h3, h4, h5, h6 {
+    overflow-wrap: break-word;
+}
+
+
+/* Varibales */
+
+
+:root {
+    /* colors */
+    --clr-gray-700: hsl(0, 0%, 20%);
+    --clr-gray-800: hsl(0, 0%, 12%);
+    --clr-gray-900: hsl(0, 0%, 8%);
+    --clr-white: hsl(0, 0%, 100%);
+    --clr-green: hsl(75, 94%, 57%);
+    /* fonts */
+    --fw-normal: 400;
+    --fw-medium: 500;
+    --fw-semibold: 600;
+    --fw-bold: 700;
+
+    --fs-normal: .875rem;
+
+    --font-family : Inter, sans-serif;
+}
+
+/* Base Styling */
+body {
+    min-height: 100dvh;
+    display: grid;
+    place-content: center;
+    font-family: var(--font-family), serif;
+    background-color: var(--clr-gray-900);
+}
+
+.container {
+    background-color: var(--clr-gray-800);
+    border-radius: 0.5rem;
+    max-width: 400px;
+    padding: 1.5rem;
+    display: flex;
+    flex-direction: column;
+    gap:20px;
+    color: var(--clr-white);
+}
+
+.profile {
+    display:grid;
+    grid-template-rows: auto auto auto auto;
+    place-items: center;
+    gap:10px;
+}
+
+.profile__avatar {
+    border-radius: 50%;
+    grid-row: 1;
+
+}
+
+.profile__name {
+    grid-row: 2;
+    font-weight: var(--fw-bold);
+    text-align: center;
+}
+
+.profile__location {
+    grid-row: 3;
+    color: var(--clr-green);
+    font-weight: var(--fw-semibold);
+    text-align: center;
+
+}
+
+.profile__bio {
+    grid-row: 4;
+    font-weight: var(--fw-normal);
+    text-align: center;
+}
+
+.social-links {
+    display: grid;
+    grid-template-rows: repeat(5, 1fr);
+    gap:10px;
+}
+
+button {
+    background-color: var(--clr-gray-700);
+    color: var(--clr-white);
+    border: none;
+    padding: 0.5rem 1rem;
+    border-radius: 0.25rem;
+    font-weight: var(--fw-semibold);
+    font-size: var(--fs-normal);
+    cursor: pointer;
+    transition: transform 0.1s ease-in-out;
+}
+
+button:active,
+button:hover {
+    background-color: var(--clr-green);
+    color: var(--clr-gray-700);
+}
+button:active {
+    transform: scale(1.05);
+}
+.attribution {
+    margin-top: 20px;
+}
+
+@media (max-width:375px){
+    .container {
+        max-width: 325px;
+    }
+}
